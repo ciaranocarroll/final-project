@@ -1,0 +1,54 @@
+/* 
+Project Name: Sassy Blank Template
+Client: Your Client
+Author: Your Name
+*/
+
+/* Import Sass partials here */
+
+@import "normalize";
+@import "defaults";
+
+$color-brand: red;
+
+.card {
+  position:relative;
+  float: left;
+  width: 48%;
+  background: #eee;
+  padding: 1em;
+  margin: 1%;
+  color: #444;
+  font-family: sans-serif;
+  border: 1px solid #f4f4f4;
+  border-top: 5px solid $color-brand;
+  transition: 0.3s;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin: 0.5em 0;
+  }
+
+  &:hover {
+    background: #fff;
+    box-shadow: 0 0 2em rgba($color-brand, 0.2);
+
+    h2 {
+      color: #000;
+    }
+  }
+  h2 {
+    margin:0 0 1em;
+    color: #333;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+  &.favourite:after {
+    content: "☆";
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+    color: $color-brand;
+    font-size: 2em;
+  }
+}
